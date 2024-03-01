@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "ふるさとリスト",
+    "version": "1.0.1",
+    "description": "ふるさと納税の返礼品・金額を一括管理",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "16.png",
+        "48": "48.png",
+        "128": "128.png"
+      }
+    },
+    "content_scripts": [{
+      "matches":[
+        "https://www.satofull.jp/products/detail.*",
+        "https://www.furusato-tax.jp/product/detail/*",
+        "https://furunavi.jp/product_detail.*",
+        "https://item.rakuten.co.jp/f*"
+      ],
+      "js": ["content.js"]
+    }],
+    "permissions": [
+      "storage",
+      "activeTab"
+    ]
+}
